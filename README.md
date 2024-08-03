@@ -14,22 +14,22 @@ CSVanalyzer is a Django-based web application that allows users to upload CSV fi
 
 ## Installation and Setup
 #### Prerequisites
-- Python 3.x installed on your system\
-- Git installed on your system\
+- Python 3.x installed on your system
+- Git installed on your system
 #### 1. Clone the Repository:
 
 Open your terminal and run the following command to clone the repository:\
-- git clone https://github.com/yourusername/CSVanalyzer.git \
+- git clone https://github.com/yourusername/CSVanalyzer.git 
 - cd CSVanalyzer 
 #### 2. Create and Activate a Virtual Environment:
 
 It's recommended to use a virtual environment to manage dependencies.Run the following commands in your terminal:
 
-- python3 -m venv venv \
-- venv\Scripts\activate \
+- python3 -m venv venv 
+- venv\Scripts\activate 
 #### 3. Install the required Python packages using pip:
 
-- pip install -r requirements.txt \
+- pip install -r requirements.txt 
 #### 4. Apply Migrations:
 
 Set up your database by applying migrations:
@@ -40,7 +40,7 @@ Set up your database by applying migrations:
 
 Start the Django development server:
 
-- python manage.py runserver \
+- python manage.py runserver 
 
 #### 6. Access the Application:
 
