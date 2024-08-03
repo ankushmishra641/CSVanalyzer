@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Analysis Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .plot-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .plot-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSV Analysis Results</h1>
+
+        <h2>First Five Rows of the Dataset</h2>
+        <div>
+            {{ first_rows|safe }}
+        </div>
+
+        <h2>Summary Statistics</h2>
+        <div>
+            {{ summary_stats|safe }}
+        </div>
+
+        <h2>Missing Values</h2>
+        <div>
+            {{ missing_values|safe }}
+        </div>
+
+        {% if plots %}
+        <h2>Data Visualizations</h2>
+        {% for plot in plots %}
+        <div class="plot-container">
+            <img src="data:image/png;base64,{{ plot }}" alt="Data Visualization">
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        <footer>
+            <p>Analysis provided by CSVanalyzer</p>
+        </footer>
+    </div>
+</body>
+</html>
